@@ -1,7 +1,3 @@
-
-writeFile file: 'Dockerfile', text: '''
-FROM eclipse-temurin:21-jdk
-COPY BootJSP.war app.war
-EXPOSE 8081
-ENTRYPOINT ["java", "-jar", "app.war"]
-'''
+FROM tomcat:10.1-jdk17
+COPY BootJSP.war /usr/local/tomcat/webapps/ROOT.war
+EXPOSE 8080
